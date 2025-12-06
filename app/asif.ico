@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Avatar A">
+  <!-- subtle background page -->
+  <rect width="120" height="120" rx="14" fill="#f6f3ee"/>
+
+  <!-- filters: gentle inner shadow + soft outer blur -->
+  <defs>
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <!-- blur the shape -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <!-- offset the blur slightly downward to simulate light from top -->
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <!-- cut the blurred part out of the original to create inner shadow -->
+      <feComposite in="offsetBlur" in2="SourceAlpha" operator="in" result="innerPart"/>
+      <feColorMatrix in="innerPart" type="matrix"
+        values="0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0.35" result="shadowCol"/>
+      <feMerge>
+        <feMergeNode in="shadowCol"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- slight outer stroke/edge highlight -->
+    <linearGradient id="edgeGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded square (main) -->
+  <g filter="url(#innerShadow)">
+    <rect x="12" y="12" width="96" height="96" rx="20" ry="20" fill="#c67c2b"/>
+    <!-- faint edge/stroke using gradient -->
+    <rect x="12" y="12" width="96" height="96" rx="20" ry="20" fill="none" stroke="url(#edgeGrad)" stroke-width="2"/>
+  </g>
+
+  <!-- Letter A -->
+  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+        font-weight="700" font-size="48" fill="#4a3030" style="letter-spacing:0.5px">
+    A
+  </text>
+</svg>
