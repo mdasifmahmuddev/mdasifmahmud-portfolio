@@ -1,3 +1,6 @@
+"use client"
+
+
 export function ExperienceSection() {
   return (
     <section className="py-20 md:py-32 px-4 bg-gradient-to-b from-transparent to-primary/5">
