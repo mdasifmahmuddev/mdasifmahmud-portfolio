@@ -134,7 +134,7 @@ export function HeroSection() {
                 View My Work
               </a>
               <a
-                href="https://drive.google.com/file/d/1lLPsooc1Ry8igx9Xm6T38tvAdgsWsV1G/view?usp=sharing"
+                href="https://drive.google.com/file/d/1NnRQXl6RT_ZmPICfBIouu7XMo0QvD1tk/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 border-2 border-secondary text-secondary rounded-lg font-semibold hover:bg-secondary/5 transition-all duration-300"
